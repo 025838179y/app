@@ -1,4 +1,7 @@
 #include <jni.h>
+#include <algorithm>
+#include <cstdint>
+#include <cstdio>
 #include <string>
 #include <vector>
 #include <android/log.h>
@@ -123,6 +126,7 @@ Java_org_koltorah_app_MainActivity_nativeTranscribe(
     whisper_full_params params = whisper_full_default_params(WHISPER_SAMPLING_GREEDY);
     params.n_threads = 4;
     params.language = lang.c_str();
+    params.initial_prompt = "שיעור תורה בעברית. מונחים נפוצים: גמרא, תלמוד, משנה, רש\u0022י, תוספות, ראשונים, אחרונים, הלכה, קושיה, תירוץ, סוגיה, הקדוש ברוך הוא, בעזרת השם.";
     params.translate = false;
     params.no_context = true;
     params.single_segment = false;
