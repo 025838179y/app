@@ -5,6 +5,7 @@ plugins {
 android {
     namespace 'org.koltorah.app'
     compileSdk 35
+    ndkVersion '26.3.11579264'
 
     defaultConfig {
         applicationId 'org.koltorah.app'
